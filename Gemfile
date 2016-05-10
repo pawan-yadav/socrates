@@ -6,7 +6,9 @@ gem 'rake', '10.1.0'
 gem 'i18n'
 
 # Database
-gem 'mysql'
+# gem 'mysql'
+gem 'activerecord-mysql2-adapter'
+gem 'mysql2'
 
 # Project dependencies
 gem 'delayed_job', '2.0.8'
@@ -25,9 +27,11 @@ gem 'mime-types', '1.25'
 
 group :development, :test do
   gem 'debugger'
-  gem 'rspec-rails', '1.3.4'
+  gem 'rspec', '1.3.2'
 end
 
 group :test do
   gem 'test-unit', '1.2.3'
+  gem 'factory_girl'
+  gem 'shoulda-matchers'
 end
