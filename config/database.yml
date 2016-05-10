@@ -1,25 +1,25 @@
 development:
       host: localhost
       adapter: mysql
-      database: fedena_ultimate
+      database: socrates_develop
       port: 3306
       username: root
-      password: foradian
+      password: root
 
 test: &test
       host: localhost
       adapter: mysql
-      database: fedena_two_new
+      database: socrates_test
       port: 3306
       username: root
-      password: foradian
+      password: root
 
 production:
       host: localhost
       adapter: mysql
-      database: fedena_ultimate
+      database: socrates_production
       port: 3306
       username: root
-      password: foradian
+      password: root
 cucumber:
   <<: *test
