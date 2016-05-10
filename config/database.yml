@@ -1,4 +1,5 @@
 development:
+      encoding: utf8
       host: localhost
       adapter: mysql2
       database: socrates_develop
@@ -7,6 +8,7 @@ development:
       password: root
 
 test: &test
+      encoding: utf8
       host: localhost
       adapter: mysql2
       database: socrates_test
@@ -15,6 +17,7 @@ test: &test
       password: root
 
 production:
+      encoding: utf8
       host: localhost
       adapter: mysql2
       database: socrates_production
