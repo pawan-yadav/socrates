@@ -27,11 +27,13 @@ gem 'mime-types', '1.25'
 
 group :development, :test do
   gem 'debugger'
-  gem 'rspec', '1.3.2'
+  gem 'rspec-rails', '1.3.4'
 end
 
 group :test do
   gem 'test-unit', '1.2.3'
+  gem 'thoughtbot-shoulda'
+  gem 'thoughtbot-factory_girl'
   gem 'factory_girl'
   gem 'shoulda-matchers'
 end
