@@ -6,7 +6,7 @@ SocratES
 SocratES
  is runs under [Ruby 1.9](https://www.ruby-lang.org/pt/documentation/installation/), [Rails 2.3.18](http://guides.rubyonrails.org/v2.3.11/getting_started.html) and [MySQL Database](http://dev.mysql.com/downloads/).
 
-## What I expect work for future?
+## What I expect for the future?
   * Ruby 2.x.x or newer support
   * Rails 4.x support
   * Support PostgresSQL, MySQL and MongoDB
