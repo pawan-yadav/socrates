@@ -32,8 +32,6 @@ end
 
 group :test do
   gem 'test-unit', '1.2.3'
-  gem 'thoughtbot-shoulda'
-  gem 'thoughtbot-factory_girl'
   gem 'factory_girl'
   gem 'shoulda-matchers'
 end

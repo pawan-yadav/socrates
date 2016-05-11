@@ -64,8 +64,6 @@ GEM
     shoulda-matchers (1.0.0)
     test-unit (1.2.3)
       hoe (>= 1.5.1)
-    thoughtbot-factory_girl (1.2.2)
-    thoughtbot-shoulda (2.11.1)
     translator (1.0.0)
     wicked_pdf (0.7.0)
     will_paginate (2.3.16)
@@ -94,8 +92,6 @@ DEPENDENCIES
   searchlogic (= 2.5.8)
   shoulda-matchers
   test-unit (= 1.2.3)
-  thoughtbot-factory_girl
-  thoughtbot-shoulda
   translator (= 1.0.0)
   wicked_pdf (= 0.7.0)
   will_paginate (= 2.3.16)
