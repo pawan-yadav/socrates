@@ -17,7 +17,8 @@ gem 'in_place_editing'
 gem 'nokogiri'
 gem 'will_paginate', '2.3.16'
 gem 'paperclip', '2.7.5'
-gem 'wicked_pdf', '0.7.0'
+gem 'wicked_pdf', '1.0.6'
+gem 'wkhtmltopdf-binary'
 gem 'xss_terminate'
 gem 'translator', '1.0.0'
 gem 'declarative_authorization'
@@ -25,8 +26,10 @@ gem 'searchlogic', '2.5.8'
 gem 'calendar_date_select', '1.16.1'
 gem 'has_and_belongs_to_many_with_deferred_save', '0.2.0'
 
+gem 'mime-types', '1.25' # to enable update
+
 # Tests
-gem 'test-unit', '1.2.3' #outside group test for enable heroku deployment
+gem 'test-unit', '1.2.3' # outside group test for enable heroku deployment
 
 group :development, :test do
   gem 'debugger'
