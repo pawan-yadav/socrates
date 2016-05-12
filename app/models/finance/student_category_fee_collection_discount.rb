@@ -33,7 +33,7 @@ class StudentCategoryFeeCollectionDiscount < FeeCollectionDiscount
 
   def discount(student = nil)
     if is_amount == false
-      super
+      self[:discount]
     elsif is_amount == true
       payable = student.nil? ? total_payable : total_payable(student)
       percentage = (super.to_f / payable.to_f).to_f * 100

@@ -34,7 +34,7 @@ class BatchFeeCollectionDiscount < FeeCollectionDiscount
       percentage = (super.to_f / payable.to_f).to_f * 100
       percentage
     else
-      super
+      self[:discount]
     end
   end
 end
