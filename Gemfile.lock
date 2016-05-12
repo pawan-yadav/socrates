@@ -125,5 +125,8 @@ DEPENDENCIES
   will_paginate (= 2.3.16)
   xss_terminate
 
+RUBY VERSION
+   ruby 1.9.3p484
+
 BUNDLED WITH
    1.12.3

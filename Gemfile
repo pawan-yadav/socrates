@@ -25,6 +25,9 @@ gem 'searchlogic', '2.5.8'
 gem 'calendar_date_select', '1.16.1'
 gem 'has_and_belongs_to_many_with_deferred_save', '0.2.0'
 
+# Tests
+gem 'test-unit', '1.2.3' #outside group test for enable heroku deployment
+
 group :development, :test do
   gem 'debugger'
   gem 'rspec-rails', '1.3.4'
@@ -33,7 +36,6 @@ end
 group :test do
   gem 'codeclimate-test-reporter', :require => nil
   gem 'factory_girl'
-  gem 'test-unit', '1.2.3'
   gem 'shoulda-matchers'
   gem 'database_cleaner'
   gem 'webrat'
