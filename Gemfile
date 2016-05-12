@@ -40,7 +40,7 @@ group :test do
   gem 'codeclimate-test-reporter', :require => nil
   gem 'factory_girl'
   gem 'shoulda-matchers'
-  gem 'database_cleaner'
+  gem 'database_cleaner', '1.1.1'
   gem 'webrat'
   gem 'simplecov', :require => false
   gem 'mocha', '0.12.8'
