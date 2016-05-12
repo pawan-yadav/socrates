@@ -5,6 +5,8 @@ ruby '1.9.3'
 gem 'rails', '2.3.18'
 gem 'rake', '10.1.0'
 gem 'i18n'
+gem 'mime-types', '1.25' # To enable update without ruby 2.x
+
 
 # Database
 # gem 'mysql'
@@ -25,8 +27,6 @@ gem 'declarative_authorization'
 gem 'searchlogic', '2.5.8'
 gem 'calendar_date_select', '1.16.1'
 gem 'has_and_belongs_to_many_with_deferred_save', '0.2.0'
-
-gem 'mime-types', '1.25' # to enable update
 
 # Tests
 gem 'test-unit', '1.2.3' # outside group test for enable heroku deployment
