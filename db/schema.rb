@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130110095412) do
+ActiveRecord::Schema.define(:version => 20131020053811) do
 
   create_table "additional_exam_groups", :force => true do |t|
     t.string  "name"
@@ -64,13 +64,13 @@ ActiveRecord::Schema.define(:version => 20130110095412) do
 
   create_table "apply_leaves", :force => true do |t|
     t.integer "employee_id"
-    t.integer "employee_leave_types_id"
+    t.integer "employee_leave_type_id"
     t.boolean "is_half_day"
     t.date    "start_date"
     t.date    "end_date"
     t.string  "reason"
-    t.boolean "approved",                :default => false
-    t.boolean "viewed_by_manager",       :default => false
+    t.boolean "approved",               :default => false
+    t.boolean "viewed_by_manager",      :default => false
     t.string  "manager_remark"
   end
 
@@ -286,13 +286,13 @@ ActiveRecord::Schema.define(:version => 20130110095412) do
   add_index "batch_students", ["batch_id", "student_id"], :name => "index_batch_students_on_batch_id_and_student_id"
 
   create_table "batches", :force => true do |t|
-    t.string   "name"
-    t.integer  "course_id"
-    t.datetime "start_date"
-    t.datetime "end_date"
-    t.boolean  "is_active",   :default => true
-    t.boolean  "is_deleted",  :default => false
-    t.string   "employee_id"
+    t.string  "name"
+    t.integer "course_id"
+    t.date    "started_on"
+    t.date    "ended_on"
+    t.boolean "is_active",   :default => true
+    t.boolean "is_deleted",  :default => false
+    t.string  "employee_id"
   end
 
   add_index "batches", ["is_deleted", "is_active", "course_id", "name"], :name => "index_batches_on_is_deleted_and_is_active_and_course_id_and_name"
@@ -1033,6 +1033,12 @@ ActiveRecord::Schema.define(:version => 20130110095412) do
     t.string   "logo_file_name"
     t.string   "logo_content_type"
     t.string   "logo_file_size"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "schools", :force => true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

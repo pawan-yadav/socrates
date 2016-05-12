@@ -7,23 +7,22 @@ gem 'i18n'
 
 # Database
 # gem 'mysql'
-gem 'activerecord-mysql2-adapter'
 gem 'mysql2'
+gem 'activerecord-mysql2-adapter'
 
 # Project dependencies
 gem 'delayed_job', '2.0.8'
-gem 'declarative_authorization', '0.5.7'
-gem 'has_and_belongs_to_many_with_deferred_save', '0.2.0'
+gem 'in_place_editing'
+gem 'nokogiri'
+gem 'will_paginate', '2.3.16'
 gem 'paperclip', '2.7.5'
+gem 'wicked_pdf', '0.7.0'
+gem 'xss_terminate'
+gem 'translator', '1.0.0'
+gem 'declarative_authorization'
 gem 'searchlogic', '2.5.8'
 gem 'calendar_date_select', '1.16.1'
-gem 'wicked_pdf', '0.7.0'
-gem 'will_paginate', '2.3.16'
-gem 'xss_terminate'
-
-gem 'translator', '1.0.0'
-gem 'in_place_editing'
-gem 'mime-types', '1.25'
+gem 'has_and_belongs_to_many_with_deferred_save', '0.2.0'
 
 group :development, :test do
   gem 'debugger'
@@ -31,7 +30,13 @@ group :development, :test do
 end
 
 group :test do
-  gem 'test-unit', '1.2.3'
+  gem 'codeclimate-test-reporter', :require => nil
   gem 'factory_girl'
+  gem 'test-unit', '1.2.3'
   gem 'shoulda-matchers'
+  gem 'database_cleaner'
+  gem 'webrat'
+  gem 'simplecov', :require => false
+  gem 'mocha', '0.12.8'
+  gem 'rspec-multi-mock', '0.1.0'
 end
