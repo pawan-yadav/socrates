@@ -894,11 +894,12 @@ describe EmployeeAttendanceController do
   end
 
   describe 'GET employee_attendance_pdf' do
-    let(:employee) { create(:employee) }
-    let(:attendance_report) { create_list(:employee_attendance, 2, employee_id: employee.id) }
-    let(:leave_types) { create_list(:employee_leave_type, 2, status: true) }
+    let!(:employee) { create(:employee) }
+    let!(:attendance_report) { create_list(:employee_attendance, 2, employee_id: employee.id) }
+    let!(:leave_types) { create_list(:employee_leave_type, 2, status: true) }
 
     before { get :employee_attendance_pdf, id: employee.id }
+
 
     it 'assigns information' do
       assigns[:employee].should == employee
