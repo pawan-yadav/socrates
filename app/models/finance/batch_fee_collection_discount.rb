@@ -31,7 +31,7 @@ class BatchFeeCollectionDiscount < FeeCollectionDiscount
   def discount(student = nil)
     if is_amount?
       payable = student.nil? ? total_payable : total_payable(student)
-      percentage = (super.to_f / payable.to_f).to_f * 100
+      percentage = (self[:discount].to_f / payable.to_f).to_f * 100
       percentage
     else
       self[:discount]
