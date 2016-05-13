@@ -130,7 +130,12 @@ FactoryGirl.define do
     employee_leave_type { association(:employee_leave_type) }
     employee            { association(:employee) }
     reason    'reason'
-    attendance_date    { Date.current }
+    #attendance_date    { Date.current }
+    attendance_date do
+      from = Time.now.to_f
+      to   = 30.day.from_now.to_f
+      Time.at(from + rand * (to - from))
+    end
   end
 
   factory :exam_group do
