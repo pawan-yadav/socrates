@@ -3,10 +3,10 @@
 module ActionController
   class Request
     private
-      # Convert nested Hashs to HashWithIndifferentAccess and replace
-      # file upload hashs with UploadedFile objects
-      def normalize_parameters(value)
-        case value
+    # Convert nested Hashs to HashWithIndifferentAccess and replace
+    # file upload hashs with UploadedFile objects
+    def normalize_parameters(value)
+      case value
         when Hash
           if value.has_key?(:tempfile)
             upload = value[:tempfile]
@@ -24,7 +24,7 @@ module ActionController
         else
           value.force_encoding('utf-8') if '1.9'.respond_to?(:force_encoding)
           value
-        end
       end
+    end
   end
 end
