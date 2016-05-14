@@ -1,4 +1,4 @@
-desc "Will generate Reek output for each Ruby file in RAILS_ROOT."
+desc 'Will generate Reek output for each Ruby file in RAILS_ROOT.'
 task(:reek) do
   require 'find'
   require 'fileutils'

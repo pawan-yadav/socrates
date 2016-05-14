@@ -55,29 +55,31 @@ class SmsManager
 
   def perform
     if @config.present?
-      message_log = SmsMessage.new(:body=> @message)
+      message_log = SmsMessage.new(body: @message)
       message_log.save
       encoded_message = URI.encode(@message)
-      request = "#{@sms_url}?#{@username_mapping}=#{@username}&#{@password_mapping}=#{@password}&#{@sender_mapping}=#{@sendername}&#{@message_mapping}=#{encoded_message}#{@additional_param}&#{@phone_mapping}="
+      request = "#{@sms_url}?#{@username_mapping}=#{@username}&#{@password_mapping}=#{@password}&
+                  #{@sender_mapping}=#{@sendername}&#{@message_mapping}=#{encoded_message}
+                  #{@additional_param}&#{@phone_mapping}="
       @recipients.each do |recipient|
         cur_request = request
         cur_request += "#{recipient}"
         begin
           response = Net::HTTP.get_response(URI.parse(cur_request))
           if response.body.present?
-            message_log.sms_logs.create(:mobile=>recipient,:gateway_response=>response.body)
+            message_log.sms_logs.create(mobile: recipient, gateway_response: response.body)
             if @success_code.present?
               if response.body.to_s.include? @success_code
-                sms_count = Configuration.find_by_config_key("TotalSmsCount")
+                sms_count = Configuration.find_by_config_key('TotalSmsCount')
                 new_count = sms_count.config_value.to_i + 1
-                sms_count.update_attributes(:config_value=>new_count)
+                sms_count.update_attributes(config_value: new_count)
               end
             end
           end
         rescue Timeout::Error => e
-          message_log.sms_logs.create(:mobile=>recipient,:gateway_response=>e.message)
+          message_log.sms_logs.create(mobile: recipient, gateway_response: e.message)
         rescue Errno::ECONNREFUSED => e
-          message_log.sms_logs.create(:mobile=>recipient,:gateway_response=>e.message)
+          message_log.sms_logs.create(mobile: recipient, gateway_response: e.message)
         end
       end
     end

@@ -28,9 +28,7 @@ class DelayedReminderJob
   end
 
   def perform
-    @recipient_ids.each do |r_id|
-      Reminder.create(:sender => @sender_id,:recipient => r_id,:subject => @subject,:body => @body)
-    end
+    @recipient_ids.each { |r_id| Reminder.create(sender: @sender_id, recipient: r_id, subject: @subject, body: @body) }
   end
 
 end

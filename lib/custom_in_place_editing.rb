@@ -29,7 +29,7 @@ module CustomInPlaceEditing
         @item = klass.find(params[:id])
         @item.send("#{attribute}=", params[:value])
         if @item.save
-          render :text => CGI::escapeHTML(@item.send(attribute).to_s)
+          render text: CGI::escapeHTML(@item.send(attribute).to_s)
         else
           render :update do |page|
             page.alert(@item.errors.full_messages.join("\n"))
