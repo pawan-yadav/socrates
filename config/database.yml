@@ -5,7 +5,7 @@ development:
       database: socrates_develop
       port: 3306
       username: root
-      password: root
+      password: 
 
 test: &test
       encoding: utf8
@@ -14,7 +14,7 @@ test: &test
       database: socrates_test
       port: 3306
       username: root
-      password: root
+      password:
 
 production:
       encoding: utf8
@@ -23,4 +23,4 @@ production:
       database: socrates_production
       port: 3306
       username: root
-      password: root
+      password:
