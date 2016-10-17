@@ -38,3 +38,6 @@ bower.json
 
 # Ignore rbenv settings
 .ruby-version
+
+# Ignore Thumbs.db files
+*/**/Thumbs.db
